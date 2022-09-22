@@ -1,20 +1,18 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import SessionState
 import os
 from PIL import Image
 
-import config, rec_sys
-from ingredient_parser import ingredient_parser
-from streamlit import st.session_state
+import config, src.rec_sys
+from src.ingredient_parser import ingredient_parser
+
 import nltk
 
 try:
     nltk.data.find("corpora/wordnet")
 except LookupError:
     nltk.download("wordnet")
-
 
 
 def make_clickable(name, link):
@@ -42,7 +40,7 @@ def main():
 
     st.text("")
 
-    session_state = SessionState.get(
+    session_state = st.session_state.get(
         recipe_df="",
         recipes="",
         model_computed=False,

@@ -5,8 +5,6 @@ from ingredient_parser import ingredient_parser
 import pickle
 import config 
 import unidecode, ast
-import config
-
 # Top-N recomendations order by score
 def get_recommendations(N, scores):
     # load in recipe dataset 

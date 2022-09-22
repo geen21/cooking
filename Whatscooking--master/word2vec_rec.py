@@ -3,6 +3,7 @@ import sys
 import logging
 import unidecode
 import ast
+
 import numpy as np
 import pandas as pd
 
@@ -12,7 +13,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from collections import defaultdict
 
 import config
-from src.ingredient_parser import ingredient_parser
+from ingredient_parser import ingredient_parser
 
 
 def get_and_sort_corpus(data):
